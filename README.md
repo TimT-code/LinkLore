@@ -7,7 +7,7 @@ with audio / video popups along with links list collection and storage.
 Started this at codepen.io messing around trying to sharpen my skills adding to arrays, and making linked lists.
 Had an idea to try to make code for fun that would put together a unique linked list of any links, and that would compare, collect, and assemble to a saved file.
 
-Wanted it to reject same links, and visually build a list live instead of reloading the page. Got some more good experience using innerHTML to make sure I didn't have to reload page. Utilized code to try out underscore.js for first time using _.sample code for a random number grab from an array and range...it works well if i reinsert that code for selecting from a possible range of random videos from the list.
+Wanted it to reject same links, and visually build a list live instead of reloading the page. Got some more good experience using innerHTML to make sure I didn't have to reload page.Used blob save for first time too. Utilized code to try out underscore.js for first time using _.sample code for a random number grab from an array and range...it works well if i reinsert that code for selecting from a possible range of random videos from the list.
 
 Built the linkings system, and text feedback system first, and the pic launcher and youtube launcher features started arriving later.
 
@@ -34,7 +34,8 @@ I thought to label/comment my code thinking other people might be learning from 
   -To do-
     More code abbreviation and function reuse.
     Maybe mess around with APIs.
-    Could build control panel directly into a button/popup that would let you edit/upload/insert/restore new videos/pics/sounds for actions/rewards for events and participation. Currently the list is in javascript form and manual edit...would be fun to edit, and add from within the html somewhere.
+    Could build control panel directly into a button/popup that would let you edit/upload/insert/restore new videos/pics/sounds for actions/rewards for events and participation.
+    Currently the list is in javascript form and manual edit...would be fun to edit, and add from within the html somewhere.
     More artificial intelligence actions based on events/input/interaction - I mean add a video tailored to each way to interact and for milestones of participation.
     Using more JS libraries when I know, or understand the code behind it, backed up my plain vanilla javascript.
     Fully Implement Save, Restore, Combine Lists functions.
