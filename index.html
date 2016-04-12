@@ -1,0 +1,46 @@
+<!-- From CodePen.io paste in -->
+
+<title>
+  LinkLore</title>
+</head>
+<br>
+<div class="outer_wrap_link_area">
+  <div id="add_area" class="add_area_div">
+    Add some links - ( No need to use http:// or www. )
+  </div>
+  <br>
+  <form id="myForm" onSubmit="add_links_function()" action="#" class="myForm_form">
+    <span class="link_span">Link:</span>
+    <input type="text" id="theLink" class="link_input" value="" onclick="lyt(vidz(7))">
+  </form>
+  <div class="controls">
+    <button id="add_links_button_id" onclick="add_links_function();lyt(vidz(1))">
+    Add Links
+  </button>
+    <button id="reset_list_button_id" onclick="lyt(vidz(6));reset_array_function()">
+    Reset List
+  </button>
+    <a id="link" target="_blank" download="file.txt"><button id="save_list_button_id" onclick="lyt(vidz(4))">
+    Save List
+  </button></a>
+    <button id="load_list_button_id" title="Feature - Not Implemented Yet!" onclick="limg(3000,media_url[2],4000)<!--non_working_feature()-->"><!-- Not Implemented Yet -->
+    Load List
+  </button>
+    <button id="add_list_button_id" title="Feature - Not Implemented Yet!" onclick="limg(0,media_url[1],5000)<!--non_working_feature()-->"><!-- Not Implemented Yet -->
+    Add List
+  </button>    
+    <button id="combine_lists_button_id" title="Feature - Not Implemented Yet!" onclick="lyt(vidz(0))<!--non_working_feature()-->"><!-- Not Implemented Yet -->
+    Combine Lists
+  </button>
+
+  </div>
+</div>
+<!-- end outer_wrap div -->
+<br>
+
+<div class="outer_wrap_list_area" onclick="lyt(vidz(8))"><p id="links_area"><span class="add_links_span">Add Links to List</span>
+  <br>
+  </p>
+</div>
+<iframe src="<!--https://www.youtube.com/embed/gYNUOkqzcVA?start=08&end=10&autoplay=1&showinfo=0&controls=0&autohide=1&disablekb=1-->" id="response_iframe_id" class="response_iframe_class" align="middle"></iframe>
+<img id="response_img_id" src="" width="250px" height="150">
