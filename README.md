@@ -57,10 +57,11 @@ I thought to excessivley label/comment my code thinking other people might be le
     More list types - save as json, arrays, objects, multidimensionals, plain text, as a pic, as unlinked list also.
     Make Popups not smother eachother, and intelligently move to accomodate a new popup. Maybe sort these to visual areas etc.
     Make video/pics/audio assets internal/local/(Not hosted on youtube etc) for faster loading and precision with timers
+    Themes and backgrounds for body and some elements.
         
   -Bugs/Quirks - fix/improve/add/redo code-
     setTimeout's timers need to be cancelled with clearTimeout's - have to name them and incorporate into the code
-    Had blob code for saving lists into the filesystem working - broke it when I tried saving as a chosen name versus just file.filetype - should be all browser compatible file api etc
+    Had blob code for saving lists into the filesystem working - broke it when I tried saving as a chosen name versus just file.filetype and adding as file save library.
 
 TimT_code@twitter.com
 Tim Tesner
