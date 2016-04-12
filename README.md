@@ -7,16 +7,19 @@ with audio / video popups along with links list collection and storage.
 Started this at codepen.io messing around trying to sharpen my skills adding to arrays, and making linked lists.
 Had an idea to try to make code for fun that would put together a unique linked list of any links, and that would compare, collect, and assemble to a saved file.
 
-Wanted it to reject same links, and visually build a list live instead of reloading the page. Got some more good experience using innerHTML to make sure I didn't have to reload page.Used blob save for first time too. Utilized code to try out underscore.js for first time using _.sample code for a random number grab from an array and range...it works well if i reinsert that code for selecting from a possible range of random videos from the list.
+Wanted it to reject same links, and visually build a list live instead of reloading the page. Got some more good experience using innerHTML to make sure I didn't have to reload page.Used blob save for first time, also tried out underscore.js for using _.sample code for a random number grab from an array and range...it works well if i reinsert that code for selecting from a possible range of random videos from the list.
 
-Built the linkings system, and text feedback system first, and the pic launcher and youtube launcher features started arriving later.
+I had Built the linkings system, and text feedback system first, and the ideas for the pic launcher and youtube launcher features started arriving later to spice it up a bit.
 
 Quickly separated the pic and youtube systems so I could harness features of what each needed separately.
 
-I thought to label/comment my code thinking other people might be learning from it or
+I thought to excessivley label/comment my code thinking other people might be learning from it, or to follow it....and as a reminder of what I did, and still wanna do.
 
 -general description of all components working together-
-  javascript console feedback for input reactions and events
+  Javascript console feedback for input reactions and events
+  Popups of Audio/Video/Pics
+  List will have unique links as an option, or select links from same domain etc
+  Links are typed live and already linked upon entry
 
     A handy youtube component for popping up embedded videos.
       -features -
@@ -45,7 +48,9 @@ I thought to label/comment my code thinking other people might be learning from 
     Same as above, but timed version...
         How many unique links can you add in chosen durations of time? Most of use can quicky type at least 10 websites from memory.
     Add parameters to hide video and use purely youtube audio from same videos.
-    More list types - save as json, arrays, objects, multidimensionals, plain text, as a pic, as unlinked list also, 
+    More list types - save as json, arrays, objects, multidimensionals, plain text, as a pic, as unlinked list also.
+    Make Popups not smother eachother, and intelligently move to accomodate a new popup. Maybe sort these to visual areas etc.
+    Make video/pics/audio assets internal/local/(Not hosted on youtube etc) for faster loading and precision with timers
         
   -Bugs/Quirks - fix/improve/add/redo code-
     setTimeout's timers need to be cancelled with clearTimeout's - have to name them and incorporate into the code
