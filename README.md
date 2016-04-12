@@ -4,10 +4,10 @@ with audio / video popups
 
 -build history of codepen.io
 
-Started this at codepen.io messing around trying to sharpen my skills adding to arrays, and making linked lists
-had an idea to try to make code for fun that would put together a unique linked list of anything and that would compare, collect, and assemble to a saved file.
+Started this at codepen.io messing around trying to sharpen my skills adding to arrays, and making linked lists.
+Had an idea to try to make code for fun that would put together a unique linked list of any links, and that would compare, collect, and assemble to a saved file.
 
-Wanted it to reject same links, and visually build a list live instead of reloading the page. Got some more good experience using innerHTML to make sure I didn't have to reload page. Had code to try out underscore.js using _.sample code for a random number grab from an array and range...it works well if i reinsert that code.
+Wanted it to reject same links, and visually build a list live instead of reloading the page. Got some more good experience using innerHTML to make sure I didn't have to reload page. Utilized code to try out underscore.js for first time using _.sample code for a random number grab from an array and range...it works well if i reinsert that code for selecting from a possible range of random videos from the list.
 
 Built the linkings system, and text feedback system first, and the pic launcher and youtube launcher features started arriving later.
 
@@ -32,9 +32,16 @@ I thought to label/comment my code thinking other people might be learning from 
       not the same url system since youtube uses start and end points and chunks of text to form whole urls
   
   -to do-
-    more code and function reuse
+    more code abbreviation and function reuse
     maybe mess around with APIs
-    could build control panel directly into a button/popup that would let you edit/upload/insert/restore new videos/pics/sounds for actions/rewards for events and participation.
+    could build control panel directly into a button/popup that would let you edit/upload/insert/restore new videos/pics/sounds for actions/rewards for events and participation. Currently the list is in javascript form and manual edit...would be fun to edit, and add from within the html somewhere.
+    More artificial intelligence actions based on events/input/interaction - I mean add a video tailored to each way to interact and for milestones of participation.
+    Using more JS libraries when I know, or understand the code behind it, backed up my plain vanilla javascript.
+    
+  -ideas-
+    Rewards and hiscore listings for typing, or pasting in as many unique links as you can - no timer
+    Same as above, but timed version...
+        How many unique links can you add in chosen durations of time? Most of use can quicky type at least 10 websites from memory.
 
 TimT_code@twitter.com
 Tim Tesner
