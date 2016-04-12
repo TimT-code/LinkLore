@@ -38,9 +38,13 @@ I thought to excessivley label/comment my code thinking other people might be le
     More code abbreviation and function reuse.
     Maybe mess around with APIs.
     Could build control panel directly into a button/popup that would let you edit/upload/insert/restore new videos/pics/sounds for actions/rewards for events and participation.
+    
     Currently the list is in javascript form and manual edit...would be fun to edit, and add from within the html somewhere.
+    
     More artificial intelligence actions based on events/input/interaction - I mean add a video tailored to each way to interact and for milestones of participation.
+    
     Using more JS libraries when I know, or understand the code behind it, backed up my plain vanilla javascript.
+    
     Fully Implement Save, Restore, Combine Lists functions.
     
   -Ideas-
