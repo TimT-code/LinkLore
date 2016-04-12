@@ -55,8 +55,7 @@ function add_links_function() {
         IDx("links_area").innerHTML += '<a href="http://' + my_links[i] + '">' + my_links[i] + '</a><br>';
         IDx('theLink').value = '';
       }
-
-      console.log('test3 - ' + stringz);
+      
       save_file();
       plural_checker_func();
 
@@ -64,8 +63,6 @@ function add_links_function() {
       console.log('my_links' + stringz);
       if (my_links.length !== 0) {
         console.log(' ' + my_links.length + ' - ' + window.plural_check + ' ' + 'Listed! ');
-
-        console.log('test');
       } else {
         code_stamp();
       }
@@ -105,11 +102,10 @@ function reset_array_function() {
     my_links.length = 0;
     IDx('links_area').innerHTML = '<span class="add_links_span">Add Links to List</span><br>';
     IDx('theLink').value = '';
-    //console.log('my_links[' + my_links + ']');
     code_stamp(); //use function again
     return;
   } else {
-    document.getElementById("links_area").innerHTML = '<span class="links_listed_span">Links Listed Here</span><br><br>';
+    IDx("links_area").innerHTML = '<span class="links_listed_span">Links Listed Here</span><br><br>';
     for (var i = 0; i < my_links.length; i++) {
       IDx("links_area").innerHTML += '<a href="http://' + my_links[i] + '">' + my_links[i] + '</a><br>';
       IDx('theLink').value = '';
@@ -133,10 +129,9 @@ function reset_array_function() {
   IDx('links_area').innerHTML = '<span class="add_links_span">Add Links to List</span><br>';
 }
 
-//installed script - filesaver.js - shortcut....after a battle to code to name the file after the actual download was already working
+//installed script - filesaver.js - shortcut....after a battle to code to name the file after the actual download was already working saving to file.
 //blob save was working - broke it again tryin to make it better - filename save feature etc
 var my_data=JSON.stringify(my_links);
-console.log(my_data+'test5')
 var blob = new Blob([my_data], {type: "text/plain;charset=utf-8"});
 
 IDx('link').href = blob;
@@ -172,7 +167,7 @@ function non_working_feature() {//use to inform of trying to use not yet built f
   alert('Feature - Not Implemented Yet!\nMight be Coded into Newer Builds....')
 }
 
-function vidz(vid_number){
+function vidz(vid_number){values passed in from function launch
   var first_part='https://www.youtube.com/embed/';
   var end_part='&autoplay=1&showinfo=0&controls=0&autohide=1&disablekb=1';  
   whole_url = first_part + vid[vid_number].vid_info + end_part;
@@ -181,7 +176,7 @@ function vidz(vid_number){
 };
 
 // Vid - Launcher Youtube - "lyt"=LaunchYouTube
-function lyt(vid_number) { //reusable for all - just pass in array index of vid_url_array, and timer_value
+function lyt(vid_number) { //reusable for all - just pass in array index of array
   IDx('response_img_id').style.display = 'none'; /*clear img in the same spot if it is still playing-so they dont collide*/
   IDx('response_iframe_id').src = whole_url;
   setTimeout(action_after_delay_timer1, vid[vid_number].dvt); //delay before displaying iframe to not show vid load-also set back start vid time in youtube url to not miss anything
@@ -212,6 +207,6 @@ function limg(delay_start_timer_value, pic_url, shutoff_timer_value) { //reusabl
   setTimeout(timerGo_pic, shutoff_timer_value); //vid close.. display off timer -- looks for timer value passed into function
 
   function timerGo_pic() {
-    IDx('response_img_id').style.display = 'none'; //makes img disapear abruptly
+    IDx('response_img_id').style.display = 'none'; //makes img disappear abruptly
   };
 };
