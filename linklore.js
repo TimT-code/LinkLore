@@ -134,6 +134,7 @@ function reset_array_function() {
 }
 
 //installed script - filesaver.js - shortcut....after a battle to code to name the file after the actual download was already working
+//blob save was working - broke it again tryin to make it better - filename save feature etc
 var my_data=JSON.stringify(my_links);
 console.log(my_data+'test5')
 var blob = new Blob([my_data], {type: "text/plain;charset=utf-8"});
