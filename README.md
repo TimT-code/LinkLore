@@ -4,7 +4,9 @@ with audio / video popups along with links list collection and storage.
 
 -build history of codepen.io
 
-Started this at codepen.io messing around trying to sharpen my skills adding to arrays, and making linked lists.
+(this readme is a mess - looks different in the editor - tried to fix readabililty)
+
+Started this project at codepen.io messing around trying to sharpen my skills adding to arrays, and making linked lists.
 Had an idea to try to make code for fun that would put together a unique linked list of any links, and that would compare, collect, and assemble to a saved file.
 
 Wanted it to reject same links, and visually build a list live instead of reloading the page. Got some more good experience using innerHTML to make sure I didn't have to reload page.Used blob save for first time, also tried out underscore.js for using _.sample code for a random number grab from an array and range...it works well if i reinsert that code for selecting from a possible range of random videos from the list.
