@@ -167,7 +167,7 @@ function non_working_feature() {//use to inform of trying to use not yet built f
   alert('Feature - Not Implemented Yet!\nMight be Coded into Newer Builds....')
 }
 
-function vidz(vid_number){values passed in from function launch
+function vidz(vid_number){//values passed in from function launch
   var first_part='https://www.youtube.com/embed/';
   var end_part='&autoplay=1&showinfo=0&controls=0&autohide=1&disablekb=1';  
   whole_url = first_part + vid[vid_number].vid_info + end_part;
