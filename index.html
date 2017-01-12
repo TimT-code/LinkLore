@@ -1,23 +1,32 @@
-<!-- From CodePen.io paste in -->
-
-<title>
-  LinkLore</title>
+<!--
+Tim Tesner
+https://twitter.com/TimT_code
+https://github.com/TimT-code
+https://codepen.io/TimT_code
+-->
+<title>LinkLore</title>
 </head>
 <br>
 <div class="outer_wrap_link_area">
   <div id="add_area" class="add_area_div">
-    Add some links - ( No need to use http:// or www. )
+    Add a link - ( No need to use http:// or www. )
+    <br>Don't use enter key - press "Add Links"
+    <br>Open Console to see more info live
   </div>
+  <button id="test_button_id" onclick="lyt(vidz(_.sample([2,7,8,9,10,11])))">
+    Test
+  </button>
+  <br>  
   <br>
   <form id="myForm" onSubmit="add_links_function()" action="#" class="myForm_form">
     <span class="link_span">Link:</span>
-    <input type="text" id="theLink" class="link_input" value="" onclick="lyt(vidz(7))">
+    <input type="text" id="theLink" class="link_input" value=""><!-- onclick="lyt(vidz(8),'v0')"-->
   </form>
-  <div class="controls">
-    <button id="add_links_button_id" onclick="add_links_function();lyt(vidz(1))">
+  <div class="controls"><!-- underscore.js - _.sample -->
+    <button id="add_links_button_id" onclick="readInput();add_links_function();lyt(vidz(_.sample([1, 4, 5, 3])))">
     Add Links
   </button>
-    <button id="reset_list_button_id" onclick="lyt(vidz(6));reset_array_function()">
+    <button id="reset_list_button_id" onclick="lyt(vidz(_.sample([4, 5, 6, 7,8])));reset_array_function()">
     Reset List
   </button>
     <a id="link" target="_blank" download="file.txt"><button id="save_list_button_id" onclick="lyt(vidz(4))">
