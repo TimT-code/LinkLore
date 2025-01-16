@@ -1,16 +1,28 @@
+var code_stamp = function(){
+  console.clear();
+  console.log('Code Author - Tim Tesner');
+  console.log('https://codepen.io/TimT_code');
+  console.log('my_links[]');
+  console.log('Add Links to List');
+  myForm.focus();
+};
+code_stamp();
 /*
 Tim Tesner
-https://twitter.com/TimT_code
-https://github.com/TimT-code (manually pasted at github - I need to learn to link up to my github thru here better)
+https://github.com/TimT-code
 https://codepen.io/TimT_code
-Let's Collaborate
 */
+//underscore.js to use ._sample()
 
-/*
---To Do List/Fix/Redo--
-Scroll to bottom for a mini list
-More listed at github repository
-*/
+//Browser Speech
+function say(text){
+  if('speechSynthesis' in window){
+    const the_saying=new SpeechSynthesisUtterance(text);
+    window.speechSynthesis.speak(the_saying);
+  }
+}
+
+//__________________________________________
 
 var vid=[];//dvt=delay_visible_time, evt=end_visible_time - pass in a 2nd argument of 'v0' for 'no-video' for audio only zindex hiding iframe
 //I would like to also write no-video into the array/object parameters instead of currently only being able to pass it thru arguments[]
@@ -28,178 +40,212 @@ vid[9]={vid_info:'eeOHEU7Ykyg?start=13&end=18', dvt:2000, evt:3800};//war games 
 vid[10]={vid_info:'B53Vlje7mcM?start=00&end=04', dvt:0, evt:3970};//war games - shall we play a game
 vid[11]={vid_info:'mtTi5yG0Qnw?start=00&end=06', dvt:0, evt:5970};//robot sounds
 
-
 var media_url = [];
 media_url[1] = 'https://media.giphy.com/media/7rj2ZgttvgomY/giphy.gif'; //clapping
-media_url[2] = 'http://33.media.tumblr.com/c85db198e229666cce94d3b1e3e8c067/tumblr_msjr0z1PmG1sgl0ajo1_500.gif';
+media_url[2] = 'https://33.media.tumblr.com/c85db198e229666cce94d3b1e3e8c067/tumblr_msjr0z1PmG1sgl0ajo1_500.gif';
 
-IDx = function(id) { //part of the IDz library i made - instead of $ / jquery
-  return document.getElementById(id)
-};
+//__________________________________________
 
-var code_stamp = function() {
-  console.clear();
-  console.log('Code Author - Tim Tesner');
-  console.log('https://twitter.com/TimT_code - https://github.com/TimT-code - https://codepen.io/TimT_code');
-  console.log('my_links[]');
-  console.log('Add Links to List');
-  myForm.focus();
-};
-code_stamp();
+IDx = function(id) {return document.getElementById(id)};
+
+//__________________________________________
+
 var my_links = []; //create an empty array to add to
+
 var plural_check; //declare variable first outside of function
-function plural_checker_func() {
-  if (my_links.length === 1) { //if equal to 1 - then 0 and 2 are "links" 
-    plural_check = 'Link'; //1
-  } else {
+function plural_checker_func(){
+  if (my_links.length === 1){//if equal to 1 - then 0 and 2 are "links"
+    plural_check = 'Link';//1
+  }else{
     plural_check = 'Links'; //0 or 2
   }
 }
-plural_checker_func();
-//var stringz = JSON.stringify(my_links);
+//plural_checker_func();
 
-function add_links_function() {
-  console.clear();
-  var add_it = IDx('theLink').value;
-  if (add_it === '') {
-    alert('Input Empty');
-    if (my_links.length) {
-      IDx("links_area").innerHTML = '<span class="links_listed_span">Links Listed Here</span><br><br>';
-    } else {
-      IDx('links_area').innerHTML = '<span class="add_links_span">Add Links to List</span><br>';
-    }
-    var repeat_func = function() { //start reusable function test
-      for (var i = 0; i < my_links.length; i++) {
-        IDx("links_area").innerHTML += '<a href="http://' + my_links[i] + '">' + my_links[i] + '</a><br>';
-        IDx('theLink').value = '';
-      }
-      
-      save_file();
-      plural_checker_func();
+//__________________________________________
 
-      var stringz = JSON.stringify(my_links);
-      console.log('my_links' + stringz);
-      if (my_links.length !== 0) {
-        console.log(' ' + my_links.length + ' - ' + window.plural_check + ' ' + 'Listed! ');
+function empty_add_links(){
+  IDx('links_area').innerHTML='<span class="add_links_span">Add Links to List</span><br>';
+}
 
-        console.log('test');
-      } else {
-        code_stamp();
-      }
-    }; //end  reusable function test - "repeat_func"
-    repeat_func(); //function launch "repeat_func" first time
+//__________________________________________
+
+function links_listed(){
+  plural_checker_func();
+  IDx("links_area").innerHTML = '<span id="link_banner_id"><span class="links_count_span">' + my_links.length + '</span><span class="links_listed_span">' + plural_check + ' Listed Here</span></span><br><br>';
+}
+
+//__________________________________________
+
+function links_and_favicons_lister(){
+  for (var i = 0; i < my_links.length; i++) {
+    IDx("links_area").innerHTML += '<img src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://' + my_links[i] + '&size=32"></img><a target="_blank" href="http://' + my_links[i] + '">' + my_links[i] + '</a><br>';
+    IDx('theLink').value = '';
   }
+  plural_checker_func();//bring in plural_check variable
+  var stringz = JSON.stringify(my_links);
+  console.log('my_links' + stringz);
+  console.log(' ' + my_links.length + ' - ' + plural_check + ' ' + 'Listed! ');
+  code_stamp();
+}
 
-  if (my_links != add_it && add_it) { //if it doesn't equal the value, and the value exists
-    if (!my_links) { //if my_links doesn't exist
-      my_links.push(add_it); //add to end or bottom of array list
-    } else {
-      my_links.unshift(add_it); //add to top of array list
-    }
-    IDx("links_area").innerHTML = '<span class="links_listed_span">Links Listed Here</span><br><br>';
-
-    for (var i = 0; i < my_links.length; i++) {
-      IDx("links_area").innerHTML += '<a href="http://' + my_links[i] + '">' + my_links[i] + '</a><br>';
+//__________________________________________
+  
+  function add_links_function(){
+    console.clear();
+    var add_it = IDx('theLink').value;
+    if(add_it === ''){//if nothing typed
+      alert('Input Empty');
+      if(my_links.length){
+        links_listed();//run function after building
+      }else{
+        empty_add_links();
+      }
+    };
+    links_and_favicons_lister();
+    
+    if(my_links != add_it && add_it) {//if it doesn't equal the value, and the value exists
+      if(!my_links){//if my_links doesn't exist
+      my_links.push(add_it);//add to end or bottom of array list
+      }else{
+        my_links.unshift(add_it); //add to top of array list
+      }
+      links_listed();
+      links_and_favicons_lister();
       IDx('theLink').value = '';
     }
-    
-    plural_checker_func();
-
-    var stringz = JSON.stringify(my_links);
-    console.log('my_links' + stringz);
-    console.log(' ' + my_links.length + ' - ' + plural_check + ' ' + 'Listed! ');
   }
-}
+
+//__________________________________________
 
 function reset_array_function() {
-  console.clear();
-
-  plural_checker_func();
-  var confirm_txt='Do you really want to clear the list? - You have, ' + my_links.length + ' ' + plural_check + ' listed!';//extra commas added for speech synth pauses
-  var confirm_it=confirm_txt.replace(/,/g,"");//replaces all commas in confirm_txt used to add pause to speech-no need to output commas
-  if ('speechSynthesis' in window) {//check if browser is capable
-    utterThis = new SpeechSynthesisUtterance(confirm_txt);
-    window.speechSynthesis.speak(utterThis);
-  };
-  var confirm_reset = confirm(confirm_it);//uses variable instead of direct text here so speech synth can share the quote( and without commas) 
-  
-  if (confirm_reset === true) {
-    my_links = [];
-    my_links.length = 0;
-    IDx('links_area').innerHTML = '<span class="add_links_span">Add Links to List</span><br>';
-    IDx('theLink').value = '';
-    //console.log('my_links[' + my_links + ']');
-    code_stamp(); //use function again
-    return;
-  } else {
-    document.getElementById("links_area").innerHTML = '<span class="links_listed_span">Links Listed Here</span><br><br>';
-    for (var i = 0; i < my_links.length; i++) {
-      IDx("links_area").innerHTML += '<a href="http://' + my_links[i] + '">' + my_links[i] + '</a><br>';
-      IDx('theLink').value = '';
-    }
-    
-    save_file();
+  if(Array.isArray(my_links) && my_links.length){//if list exists and has content
+    console.clear();
     plural_checker_func();
-
-    var stringz = JSON.stringify(my_links);
-    console.log('my_links' + stringz);
-    console.log(' ' + my_links.length + ' - ' + plural_check + ' ' + 'Listed! ');    
-    return;
+    var confirm_txt='Do you really want to clear the list? - You have, ' + my_links.length + ' ' + plural_check + ' listed!';//extra commas added for speech synth pauses
+    var confirm_it=confirm_txt.replace(/,/g,"");//replaces all commas in confirm_txt used to add pause to speech-no need to output commas
+    say(confirm_txt);
+    var confirm_reset = confirm(confirm_it);//uses variable instead of direct text here so speech synth can share the quote( and without commas)
+    
+    if(confirm_reset === true){
+      my_links = [];
+      my_links.length = 0;
+      empty_add_links();// Add Links- banner
+      IDx('theLink').value = '';
+      //console.log('my_links[' + my_links + ']');
+      code_stamp(); //use function again
+      return;
+    }else{
+      links_listed();
+      links_and_favicons_lister();
+      return;
+    }
+    plural_checker_func();
+    IDx('links_area').innerHTML = '<span class="list_empty_span">List Empty - There are No Links Added to Clear!</span><br>';
+    console.log('Array already empty');
+    alert('Array already empty');
+    console.clear();
+    code_stamp();
+    empty_add_links();
+  }else{
+    alert('List Empty - Cannot Reset!');
+    
+    var emptyReset_talk=[];
+    emptyReset_talk[0]='There isn\'t anything listed to reset';
+    emptyReset_talk[1]='There wasn\'t any info submitted to reset';
+    emptyReset_talk[2]='No information submitted to reset';
+    emptyReset_talk[3]='The list is empty no data has been submitted';
+    emptyReset_talk[3]='Cannot reset an empty list.';
+    
+    say(_.sample(emptyReset_talk));
+}
   }
-  plural_checker_func();
-  
-  IDx('links_area').innerHTML = '<span class="list_empty_span">List Empty - There are No Links Added to Clear!</span><br>';
-  console.log('Array already empty');
-  alert('Array already empty');
-  console.clear();
-  code_stamp();
-  IDx('links_area').innerHTML = '<span class="add_links_span">Add Links to List</span><br>';
+
+//__________________________________________
+
+//uses filesaver.js
+
+function save_file(){//Uses filesaver.js library - Save only if the list has contents
+  if(Array.isArray(my_links) && my_links.length){
+    var my_data=JSON.stringify(my_links);
+    var str = my_data.replace(/"/g, '');//removes quotes
+    var str2=str.replace(/,/g, '\n');//replaces commas to line breaks
+    var str3=str2.replace(/[\[\]]/g, '');//eliminates square brackets
+    var blob = new Blob([str3], {type: "text/plain;charset=utf-8"});
+saveAs(blob, "Link_Lore-list.txt");
+    }else{//List is Empty
+      alert('List Empty - Cannot Save!');
+      var emptySave_talk=[];
+      emptySave_talk[0]='There isn\'t anything listed to save';
+      emptySave_talk[1]='There wasn\'t any info submitted to save';
+      emptySave_talk[2]='No information submitted to save';
+      emptySave_talk[3]='Can\'t save an empty list when no data has been submitted';
+      emptySave_talk[3]='Cannot save an empty list.';
+      
+      say(_.sample(emptySave_talk));
+    }
 }
 
-//installed script - filesaver.js - shortcut....after a battle to code to name the file after the actual download was already working - maybe reinstall it
-var my_data=JSON.stringify(my_links);
-var blob = new Blob([my_data], {type: "text/plain;charset=utf-8"});
+//__________________________________________
 
-IDx('link').href = blob;
-saveAs(blob, "hello world.txt");
-/*
-var save_file = function() { //reuse this function after each loop      
-  //save as text file - code
-  console.log('test - ' + my_links);
-  //var stringz = JSON.stringify(my_links);
-  //var my_data = my_links;
-  var my_data = JSON.stringify(my_links);  
-  properties = {
-    type: 'octet/stream'
-  }; // mime-type.
-  try {
-    // use of the File constructor..
-    file = new File(my_data, 'test_text_blob_codepen.txt', properties)
-  } catch (e) {
-    // ... or fall back to Blob constructor
-    my_blob = new Blob([my_data], properties)//added the brackets to make json format
-  }
-  url = URL.createObjectURL(my_blob);
-  var a=document.createElement('a');
-  
-  a.download='blobby-backup.json';
- // a.href=url;
-  IDx('link').href = url;//uncomment maybe  
+function load_file(){
+  var load_file_input = document.createElement('input');
+  load_file_input.id = 'load_file_input_id';
+  load_file_input.type = 'file';
+  //load_file_input.name = 'myFile';
+  var outer_wrap_link_area = IDx('outer_wrap_link_area_id');
+  var links_form = IDx('myForm');
+  outer_wrap_link_area.insertBefore(load_file_input, links_form);
+  var load_list_button_lit=IDx('load_list_button_id');
+  load_list_button_lit.style.backgroundColor='violet';
+  load_list_button_lit.style.color='white';
+  links_form.style.display='none';
+  const fileContent = IDx('links_area');
+  load_file_input.addEventListener('change', (event) => {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+    IDx('load_file_input_id').style.display='none';
+      links_form.style.display='block';
+      reader.onload = (e)=>{
+        const text_to_list=e.target.result;
+        my_links=text_to_list.split('\n');
+        
+        links_listed();
+        links_and_favicons_lister();
+      };
+    reader.readAsText(file);
+    var fileLoaded_talk=[];
+    fileLoaded_talk[0]='The file has been loaded into the list';
+    fileLoaded_talk[1]='The list has been loaded from the file';
+    fileLoaded_talk[2]='Loaded the file into the list';
+    fileLoaded_talk[3]='The file has been loaded into the list';
+    say(_.sample(fileLoaded_talk));
+    });
 }
-save_file(); //launch function immediately
-*/
+
+//__________________________________________
+
+function disable_load_list_button(){//disable function so it doesn't let you push button again before file is uploaded
+  window.load_file = function(){};
+}
+
+//__________________________________________
 
 function non_working_feature() {//use to inform of trying to use not yet built features
-  alert('Feature - Not Implemented Yet!\nMight be Coded into Newer Builds....')
+  alert('Feature - Not Implemented Yet!\nMight be Coded into Newer Builds....');
 }
+
+//__________________________________________
 
 function vidz(vid_number){
   var first_part='https://www.youtube.com/embed/';
   var end_part='&autoplay=1&showinfo=0&controls=0&autohide=1&disablekb=1&fs=0';  
   whole_url = first_part + vid[vid_number].vid_info + end_part;
-  return vid_number;
   console.log(whole_url);
-};
+  return vid_number;  
+}
+
+//__________________________________________
 
 // Vid - Launcher Youtube - "lyt"=LaunchYouTube
 function lyt(vid_number) { //reusable for all - just pass in array index of lyt(vidz(4),'v0'), a 2nd argument 'v0' single quoted
@@ -209,7 +255,7 @@ function lyt(vid_number) { //reusable for all - just pass in array index of lyt(
     //IDx('response_iframe_id').style.width='0';
     //IDx('response_iframe_id').style.height='0';
     //IDx('response_iframe_id').style.zIndex='-1';
-   IDx('response_iframe_id').style='z-index:-1;position:absolute;top:250px;left:125px;width:0;height:0';//hide visible part of video clip
+    IDx('response_iframe_id').style='z-index:-1;position:absolute;top:250px;left:125px;width:0;height:0';//hide visible part of video clip
   }
   IDx('response_img_id').style.display = 'none'; /*clear img in the same spot if it is still playing-so they dont collide*/
   IDx('response_iframe_id').src = whole_url;
@@ -217,13 +263,14 @@ function lyt(vid_number) { //reusable for all - just pass in array index of lyt(
   function action_after_delay_timer1() {
     IDx('response_iframe_id').style.display = 'inline';
   }
-  setTimeout(timerGo_vid, vid[vid_number].evt) //vid close.. display off timer -- looks for timer value passed into function
-
+  setTimeout(timerGo_vid, vid[vid_number].evt); //vid close.. display off timer -- looks for timer value passed into function
   function timerGo_vid() {
     IDx('response_iframe_id').src = ''; //makes iframe suddenly have no src turning to black background css
     IDx('response_iframe_id').style.display = 'none'; //makes iframe disappear abruptly
   }
 }
+
+//__________________________________________
 
 //Pic_launcher
 function limg(delay_start_timer_value, pic_url, shutoff_timer_value) { //reusable for all - just pass in array index of pic_url_array, and timer_value 
@@ -237,53 +284,38 @@ function limg(delay_start_timer_value, pic_url, shutoff_timer_value) { //reusabl
   function action_after_delay_timer2() {
     IDx('response_iframe_id').style.display = 'none';
     IDx('response_img_id').style.display = 'inline';
-  };
+  }
   setTimeout(timerGo_pic, shutoff_timer_value); //vid close.. display off timer -- looks for timer value passed into function
 
   function timerGo_pic() {
     IDx('response_img_id').style.display = 'none'; //makes img disapear abruptly
-  };
-};
+  }
+}
 
-/*
+//__________________________________________
+
 function readInput() {
-  var
-  inputForm = document.querySelector('#myForm'),
-  inputTxt = document.querySelector('#theLink'),
-  utterThis = new SpeechSynthesisUtterance(inputTxt.value);
-  window.speechSynthesis.speak(utterThis);
-};
-*/
-function readInput() {
-  var
-  inputForm = document.querySelector('#myForm'),
-  inputTxt = document.querySelector('#theLink'),
+  var inputForm = IDx('myForm'),
+      inputTxt = IDx('theLink');
   addon_talk=[];
   addon_talk[0]=', has been added to the links list';
   addon_talk[1]=', was added to the list';
   addon_talk[2]=', has been listed';
   addon_talk[3]=', is now a part of the links list';
-  addon_talk[4]=', has been added to the links list';
-  addon_talk[5]=', was just added.'
-  if ('speechSynthesis' in window) {//check if browser is capable
-  utterThis = new SpeechSynthesisUtterance(inputTxt.value+_.sample(addon_talk));//random using underscore.js - _.sample  
-  window.speechSynthesis.speak(utterThis);
-  //alert(window.my_links[0]);
-  };
-};
-
-/*
-
---To Do List/Fix/Redo--
-  Must fix and name setTimeouts to add clearTimeouts to not squash newly launched videos
-  I think the timer is closing some early leftover from other videos
-  Fix/Remake the list save function - had it working until I tried to install a filesaver library and wanted to save name
-  Add Function to restore or read file/list save
-  Add ways to sort list - alpha, numeric, date, popularity entered etc
-  Add control panel to manually insert new videos timers and snippets, and automatically add a count number to the array list
-  Trying to add links to list using enter key versus "add links" button has mixed results
-  Options to save in formats - plain text, json, csv, bbcode, embed codes, stacked text no space, side by side links
-  Sort systems/Edit system by checkbox - by line - also tag or add descriptions
-  Add Simple search and make it scroll to link with anchor tags or prescroll etc
+  addon_talk[4]=', has now been added to the links list';
+  addon_talk[5]=', was just added.';
   
-  */
+  var empty_talk=[];
+  empty_talk[0]='There isn\'t any information submitted';
+  empty_talk[1]='There wasn\'t any info submitted';
+  empty_talk[2]='No information submitted';
+  empty_talk[3]='No data submitted';
+  empty_talk[4]='Your submission contained no information';
+  
+  if(inputTxt.value !== ''){
+    say(inputTxt.value + _.sample(addon_talk));//The entry + added on talk
+  }else{
+    say(_.sample(empty_talk));
+  }
+}
+/*--To Do List/Fix/Redo--*/
