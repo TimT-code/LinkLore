@@ -12,9 +12,9 @@ https://github.com/TimT-code
 https://codepen.io/TimT_code
 -->
 <br>
-<div class="outer_wrap_link_area">
+<div id="outer_wrap_link_area_id" class="outer_wrap_link_area">
   <div id="add_area" class="add_area_div">
-    Add a link - ( No need to use http:// or www. )
+    Add a website name, or link - ( No need to use http:// or www. )
     <br>Don't use enter key - press "Add Links"
     <br>Open Console to see more info live
   </div>
@@ -27,23 +27,23 @@ https://codepen.io/TimT_code
     <span class="link_span">Link:</span>
     <input type="text" id="theLink" class="link_input" value=""><!-- onclick="lyt(vidz(8),'v0')"-->
   </form>
-  <div class="controls"><!-- underscore.js - _.sample -->
-    <button id="add_links_button_id" onclick="readInput();add_links_function();lyt(vidz(_.sample([1, 4, 5, 3])))">
+  <div id="controls" class="controls"><!-- underscore.js - _.sample -->
+    <button id="add_links_button_id" title="Add Links" onclick="readInput();add_links_function();blur();lyt(vidz(_.sample([1, 4, 5, 3])))">
     Add Links
   </button>
-    <button id="reset_list_button_id" onclick="lyt(vidz(_.sample([4, 5, 6, 7,8])));reset_array_function()">
+    <button id="reset_list_button_id" title="Reset List" onclick="lyt(vidz(_.sample([4, 5, 6, 7,8])));reset_array_function();blur()">
     Reset List
   </button>
-    <a id="link" target="_blank" download="file.txt"><button id="save_list_button_id" onclick="lyt(vidz(4))">
+    <a id="link" target="_blank" download="file.txt"><button id="save_list_button_id" title="Save List" onclick="lyt(vidz(4));save_file();blur()">
     Save List
   </button></a>
-    <button id="load_list_button_id" title="Feature - Not Implemented Yet!" onclick="limg(3000,media_url[2],4000)<!--non_working_feature()-->"><!-- Not Implemented Yet -->
+    <button id="load_list_button_id" title="Load List - Feature - Not Implemented Yet!" onclick="limg(3000,media_url[2],4000);load_file();disable_load_list_button();blur()">
     Load List
   </button>
-    <button id="add_list_button_id" title="Feature - Not Implemented Yet!" onclick="limg(0,media_url[1],5000)<!--non_working_feature()-->"><!-- Not Implemented Yet -->
+    <button id="add_list_button_id" title="Add List - Feature - Not Implemented Yet!" onclick="limg(0,media_url[1],5000);non_working_feature();blur()"><!-- Not Implemented Yet -->
     Add List
   </button>    
-    <button id="combine_lists_button_id" title="Feature - Not Implemented Yet!" onclick="lyt(vidz(0))<!--non_working_feature()-->"><!-- Not Implemented Yet -->
+    <button id="combine_lists_button_id" title="Combine Lists - Feature - Not Implemented Yet!" onclick="lyt(vidz(0));non_working_feature();blur()"><!-- Not Implemented Yet -->
     Combine Lists
   </button>
 
