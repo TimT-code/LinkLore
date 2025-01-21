@@ -1,4 +1,4 @@
-const clr_bar = (function address_bar_color_changer(){
+let clr_bar = (function address_bar_color_changer(){
   let changer_interval=setInterval(
     ()=>{
       let metaTag = document.getElementById('meta_id');
