@@ -1,3 +1,11 @@
+(function changer(){
+  let metaTag = document.createElement('meta');
+  metaTag.id='div_id';
+  metaTag.setAttribute('name', 'theme-color');
+  metaTag.setAttribute('content', 'purple');
+  document.body.appendChild(metaTag);
+  })();
+
 var code_stamp = function(){
   console.clear();
   console.log('Code Author - Tim Tesner');
