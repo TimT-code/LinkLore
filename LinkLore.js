@@ -3,7 +3,7 @@
   metaTag.id='div_id';
   metaTag.setAttribute('name', 'theme-color');
   metaTag.setAttribute('content', 'purple');
-  document.body.appendChild(metaTag);
+  document.head.appendChild(metaTag);
   })();
 
 var code_stamp = function(){
