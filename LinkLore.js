@@ -231,7 +231,7 @@ function load_file(){
     fileLoaded_talk[2]='Loaded the file into the list';
     fileLoaded_talk[3]='The file has been loaded into the list';
     say(_.sample(fileLoaded_talk));
-    address_bar_color_changer();
+    //address_bar_color_changer();
     });
 }
 
