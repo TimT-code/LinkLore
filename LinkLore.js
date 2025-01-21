@@ -1,5 +1,4 @@
-/*
-(function changer(){
+function address_bar_color_changer(){
   let changer_interval=setInterval(
     ()=>{
       let metaTag = document.getElementById('meta_id');
@@ -8,7 +7,6 @@
     },10);
  setTimeout(()=>clearInterval(changer_interval), 1000);
   })();
-  */
 
 var code_stamp = function(){
   console.clear();
@@ -233,17 +231,8 @@ function load_file(){
     fileLoaded_talk[2]='Loaded the file into the list';
     fileLoaded_talk[3]='The file has been loaded into the list';
     say(_.sample(fileLoaded_talk));
+    address_bar_color_changer();
     });
-  
-  function changer(){//launch as an action completed effect
-    let changer_interval=setInterval(
-      ()=>{
-        let metaTag = document.getElementById('meta_id');
-        let rndClr = "#" + Math.floor(Math.random() * 16777215).toString(16);
-        metaTag.setAttribute('content', rndClr);
-      },10);
-    setTimeout(()=>clearInterval(changer_interval), 1000);
-  };
 }
 
 //__________________________________________
@@ -344,17 +333,4 @@ function readInput() {
 
 //__________________________________________
 
-function addressBarColorFlasher(){
-  function addressBarColor(){
-    let rndColorSetter=setInterval(
-    ()=>{
-      function meta_rnd_clr(){return "#" + Math.floor(Math.random() * 16777215).toString(16);}
-      let meta_id=document.getElementById('meta_id');
-      meta_id.setAttribute('content', ' + meta_rnd_clr() + ');
-    },100);
-}
-  addressBarColor();
-  setTimeout(clearInterval(rndColorSetter),5000);
-}
-//}
 /*--To Do List/Fix/Redo--*/
