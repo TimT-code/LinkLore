@@ -232,6 +232,16 @@ function load_file(){
     fileLoaded_talk[3]='The file has been loaded into the list';
     say(_.sample(fileLoaded_talk));
     });
+  
+  function changer(){//launch as an action completed effect
+    let changer_interval=setInterval(
+      ()=>{
+        let metaTag = document.getElementById('meta_id');
+        let rndClr = "#" + Math.floor(Math.random() * 16777215).toString(16);
+        metaTag.setAttribute('content', rndClr);
+      },10);
+    setTimeout(()=>clearInterval(changer_interval), 1000);
+  };
 }
 
 //__________________________________________
