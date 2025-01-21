@@ -221,6 +221,8 @@ function load_file(){
     fileLoaded_talk[3]='The file has been loaded into the list';
     say(_.sample(fileLoaded_talk));
     });
+  addressBarColorFlasher();
+  alert('test');
 }
 
 //__________________________________________
