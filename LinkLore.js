@@ -4,7 +4,8 @@
       let metaTag = document.getElementById('meta_id');
       let rndClr = "#" + Math.floor(Math.random() * 16777215).toString(16);
       metaTag.setAttribute('content', rndClr);
-    },250);
+    },100);
+  setTimeout(clearInterval(changer_interval, 4000);
   })();
 
 var code_stamp = function(){
