@@ -1,9 +1,6 @@
 (function changer(){
-  let metaTag = document.createElement('meta');
-  metaTag.id='div_id';
-  metaTag.setAttribute('name', 'theme-color');
+  let metaTag = document.getElementById('meta_id');
   metaTag.setAttribute('content', 'purple');
-  document.head.appendChild(metaTag);
   })();
 
 var code_stamp = function(){
