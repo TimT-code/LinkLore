@@ -158,6 +158,7 @@ function reset_array_function() {
     emptyReset_talk[3]='Cannot reset an empty list.';
     
     say(_.sample(emptyReset_talk));
+    addressBarColorFlasher();
 }
   }
 
@@ -221,8 +222,6 @@ function load_file(){
     fileLoaded_talk[3]='The file has been loaded into the list';
     say(_.sample(fileLoaded_talk));
     });
-  addressBarColorFlasher();
-  alert('test');
 }
 
 //__________________________________________
