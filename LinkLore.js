@@ -6,7 +6,7 @@ function address_bar_color_changer(){
       metaTag.setAttribute('content', rndClr);
     },10);
  setTimeout(()=>clearInterval(changer_interval), 1000);
-  })();
+  };
 
 var code_stamp = function(){
   console.clear();
