@@ -1,6 +1,10 @@
 (function changer(){
-  let metaTag = document.getElementById('meta_id');
-  metaTag.setAttribute('content', 'purple');
+  let changer_interval=setInterval(
+    ()=>{
+      let metaTag = document.getElementById('meta_id');
+      let rndClr = "#" + Math.floor(Math.random() * 16777215).toString(16);
+      metaTag.setAttribute('content', rndClr);
+    },250);
   })();
 
 var code_stamp = function(){
