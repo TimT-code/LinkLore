@@ -1,4 +1,4 @@
-(function address_bar_color_changer(){
+const clr_bar = (function address_bar_color_changer(){
   let changer_interval=setInterval(
     ()=>{
       let metaTag = document.getElementById('meta_id');
@@ -97,6 +97,7 @@ function links_and_favicons_lister(){
   console.log('my_links' + stringz);
   console.log(' ' + my_links.length + ' - ' + plural_check + ' ' + 'Listed! ');
   code_stamp();
+  clr_bar();
 }
 
 //__________________________________________
