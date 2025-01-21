@@ -1,3 +1,4 @@
+/*
 (function changer(){
   let changer_interval=setInterval(
     ()=>{
@@ -7,6 +8,7 @@
     },10);
  setTimeout(()=>clearInterval(changer_interval), 1000);
   })();
+  */
 
 var code_stamp = function(){
   console.clear();
