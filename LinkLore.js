@@ -97,7 +97,6 @@ function links_and_favicons_lister(){
   console.log('my_links' + stringz);
   console.log(' ' + my_links.length + ' - ' + plural_check + ' ' + 'Listed! ');
   code_stamp();
-  clr_bar();
 }
 
 //__________________________________________
