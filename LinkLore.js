@@ -322,7 +322,8 @@ function readInput() {
 }
 
 //__________________________________________
-function AddressBarColorFlasher(){
+
+function addressBarColorFlasher(){
   function addressBarColor(){
     let rndColorSetter=setInterval(
     ()=>{
