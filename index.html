@@ -6,13 +6,11 @@
     <meta id="meta_id" name="theme-color" content="black">
   </head>
   <body>
-<!--
-Tim Tesner
+<!-- Tim Tesner
 https://twitter.com/TimT_code
 https://github.com/TimT-code
 https://codepen.io/TimT_code
 -->
-<br>
 <div id="outer_wrap_link_area_id" class="outer_wrap_link_area">
   <div id="add_area" class="add_area_div">
     Add a website name, or link - ( No need to use http:// or www. )
@@ -30,38 +28,41 @@ https://codepen.io/TimT_code
   </form>
   <div id="controls" class="controls"><!-- underscore.js - _.sample -->
     <button id="add_links_button_id" title="Add Links" onclick="readInput();add_links_function();blur();lyt(vidz(_.sample([1, 4, 5, 3])))">
-    Add Links
-  </button>
+      Add Links
+    </button>
     <button id="reset_list_button_id" title="Reset List" onclick="lyt(vidz(_.sample([4, 5, 6, 7,8])));reset_array_function();blur()">
-    Reset List
-  </button>
-    <a id="link" target="_blank" download="file.txt"><button id="save_list_button_id" title="Save List" onclick="lyt(vidz(4));save_file();blur()">
-    Save List
-  </button></a>
+      Reset List
+    </button>
+    <a id="link" target="_blank" download="file.txt">
+      <button id="save_list_button_id" title="Save List" onclick="lyt(vidz(4));save_file();blur()">
+        Save List
+      </button>
+    </a>
     <button id="load_list_button_id" title="Load List - Feature - Not Implemented Yet!" onclick="limg(3000,media_url[2],4000);load_file();disable_load_list_button();blur()">
-    Load List
-  </button>
+      Load List
+    </button>
     <button id="add_list_button_id" title="Add List - Feature - Not Implemented Yet!" onclick="limg(0,media_url[1],5000);non_working_feature();blur()"><!-- Not Implemented Yet -->
-    Add List
-  </button>    
+      Add List
+    </button>
     <button id="combine_lists_button_id" title="Combine Lists - Feature - Not Implemented Yet!" onclick="lyt(vidz(0));non_working_feature();blur()"><!-- Not Implemented Yet -->
-    Combine Lists
-  </button>
-
+      Combine Lists
+    </button>
   </div>
 </div>
-<!-- end outer_wrap div -->
-<br>
-
-<div class="outer_wrap_list_area" onclick="lyt(vidz(8))"><p id="links_area"><span class="add_links_span">Add Links to List</span>
-  <br>
-  </p>
-</div>
-<iframe src="<!--https://www.youtube.com/embed/gYNUOkqzcVA?start=08&end=10&autoplay=1&showinfo=0&controls=0&autohide=1&disablekb=1-->" id="response_iframe_id" class="response_iframe_class" align="middle"></iframe>
-<img id="response_img_id" src="" width="250px" height="150">
-
-<script type="text/javascript" src="LinkLore.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-  
-</body>
+    <!-- end outer_wrap div -->
+    <br>
+    <div class="outer_wrap_list_area" onclick="lyt(vidz(8))">
+      <p id="links_area">
+        <span class="add_links_span">
+          Add Links to List
+        </span>
+        <br>
+      </p>
+    </div>
+    <iframe src="<!--https://www.youtube.com/embed/gYNUOkqzcVA?start=08&end=10&autoplay=1&showinfo=0&controls=0&autohide=1&disablekb=1-->" id="response_iframe_id" class="response_iframe_class" align="middle"></iframe>
+    <img id="response_img_id" src="" width="250px" height="150">
+    
+    <script type="text/javascript" src="LinkLore.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  </body>
 </html>
