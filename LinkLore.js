@@ -91,7 +91,7 @@ function links_listed(){
 
 function links_and_favicons_lister(){
   for (var i = 0; i < my_links.length; i++) {
-    IDx("links_area").innerHTML += '<img src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://' + my_links[i] + '&size=32"></img><a id="links_id" target="_blank" href="http://' + my_links[i] + '">' + my_links[i] + '</a><br>';
+    IDx("links_area").innerHTML += '<img src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://' + my_links[i] + '&size=32"></img><a class="links_class" target="_blank" href="http://' + my_links[i] + '">' + my_links[i] + '</a><br>';
     IDx('theLink').value = '';
   }
   plural_checker_func();//bring in plural_check variable
