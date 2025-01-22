@@ -5,7 +5,7 @@ let clr_bar = (function address_bar_color_changer(){
       let rndClr = "#" + Math.floor(Math.random() * 16777215).toString(16);
       metaTag.setAttribute('content', rndClr);
     },10);
- setTimeout(()=>clearInterval(changer_interval), 1000);
+ setTimeout(()=>clearInterval(changer_interval), 500);
   })();
 
 var code_stamp = function(){
