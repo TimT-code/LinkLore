@@ -109,8 +109,19 @@ function links_listed(){
 
 function favicons_and_links_template(index){
   this.i=index;
+  const theImg = new Image();
+  img.onload = function(){
+    theImg_w = this.width;
+    theImg_h = this.height;
+    if(theImg_w < 32){
+      this.style.width='32px';
+      this.style.height='32px':
+    };
+  };
+  theImg.src='https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://${my_links[i]}&size=32';
+  const imgSrc=theImg.src;
   return `
-    <img src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://${my_links[i]}&size=32">
+    <img src="${imgSrc}">
     </img>
     <a class="links_class" target="_blank" href="https://${my_links[i]}">
       ${my_links[i]}
