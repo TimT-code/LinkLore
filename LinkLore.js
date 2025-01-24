@@ -82,9 +82,25 @@ function empty_add_links(){
 
 //__________________________________________
 
+//template literals instead of concatenation
+const links_listed_banner=`
+  <span id="link_banner_id">
+    <span class="links_count_span">
+      ${my_links.length}
+    </span>
+    <span class="links_listed_span">
+      ${plural_check} Listed Here
+    </span>
+  </span>
+  <br>
+  <br>
+`;
+
+//__________________________________________
+
 function links_listed(){
   plural_checker_func();
-  IDx("links_area").innerHTML = '<span id="link_banner_id"><span class="links_count_span">' + my_links.length + '</span><span class="links_listed_span">' + plural_check + ' Listed Here</span></span><br><br>';
+  IDx("links_area").innerHTML=links_listed_banner;
 }
 
 //__________________________________________
