@@ -107,7 +107,7 @@ function links_listed(){
 
 //__________________________________________
 
-function favicons_and_links_template(){
+function favicons_and_links_template(index){
   return `
     <img src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://${my_links[i]}&size=32">
     </img>
@@ -122,7 +122,7 @@ function favicons_and_links_template(){
 
 function favicons_and_links_lister(){
   for (var i = 0; i < my_links.length; i++) {
-    IDx("links_area").innerHTML += favicons_and_links_template();
+    IDx("links_area").innerHTML += favicons_and_links_template(i);
     IDx('theLink').value = '';
   }
   plural_checker_func();//bring in plural_check variable
