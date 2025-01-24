@@ -83,7 +83,7 @@ function empty_add_links(){
 //__________________________________________
 
 //template literals instead of concatenation
-function links_listed_banner(){
+function links_listed_banner(){//count of links and plural check
   plural_checker_func();//to use plural_check variable
   return `
     <span id="link_banner_id">
@@ -107,9 +107,22 @@ function links_listed(){
 
 //__________________________________________
 
-function links_and_favicons_lister(){
+function favicons_and_links_template(){
+  return `
+    <img src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://${my_links[i]}&size=32">
+    </img>
+    <a class="links_class" target="_blank" href="https://${my_links[i]}">
+      ${my_links[i]}
+    </a>
+    <br>
+  `;
+}
+
+//__________________________________________
+
+function favicons_and_links_lister(){
   for (var i = 0; i < my_links.length; i++) {
-    IDx("links_area").innerHTML += '<img src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://' + my_links[i] + '&size=32"></img><a class="links_class" target="_blank" href="http://' + my_links[i] + '">' + my_links[i] + '</a><br>';
+    IDx("links_area").innerHTML += favicons_and_links_template();
     IDx('theLink').value = '';
   }
   plural_checker_func();//bring in plural_check variable
@@ -132,7 +145,7 @@ function links_and_favicons_lister(){
         empty_add_links();
       }
     };
-    links_and_favicons_lister();
+    favicons_and_links_lister();
     
     if(my_links != add_it && add_it) {//if it doesn't equal the value, and the value exists
       if(!my_links){//if my_links doesn't exist
@@ -141,7 +154,7 @@ function links_and_favicons_lister(){
         my_links.unshift(add_it); //add to top of array list
       }
       links_listed();
-      links_and_favicons_lister();
+      favicons_and_links_lister();
       IDx('theLink').value = '';
     }
   }
@@ -167,7 +180,7 @@ function reset_array_function() {
       return;
     }else{
       links_listed();
-      links_and_favicons_lister();
+      favicons_and_links_lister();
       return;
     }
     plural_checker_func();
@@ -233,17 +246,16 @@ function load_file(){
   links_form.style.display='none';
   const fileContent = IDx('links_area');
   load_file_input.addEventListener('change', (event) => {
-      const file = event.target.files[0];
-      const reader = new FileReader();
+    const file = event.target.files[0];
+    const reader = new FileReader();
     IDx('load_file_input_id').style.display='none';
-      links_form.style.display='block';
-      reader.onload = (e)=>{
-        const text_to_list=e.target.result;
-        my_links=text_to_list.split('\n');
-        
-        links_listed();
-        links_and_favicons_lister();
-      };
+    links_form.style.display='block';
+    reader.onload = (e)=>{
+      const text_to_list=e.target.result;
+      my_links=text_to_list.split('\n');
+      links_listed();
+      favicons_and_links_lister();
+    };
     reader.readAsText(file);
     var fileLoaded_talk=[];
     fileLoaded_talk[0]='The file has been loaded into the list';
@@ -327,8 +339,8 @@ function limg(delay_start_timer_value, pic_url, shutoff_timer_value) { //reusabl
 //__________________________________________
 
 function readInput() {
-  var inputForm = IDx('myForm'),
-      inputTxt = IDx('theLink');
+  var inputForm = IDx('myForm');
+  var inputTxt = IDx('theLink');
   addon_talk=[];
   addon_talk[0]=', has been added to the links list';
   addon_talk[1]=', was added to the list';
