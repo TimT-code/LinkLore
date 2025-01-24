@@ -108,6 +108,7 @@ function links_listed(){
 //__________________________________________
 
 function favicons_and_links_template(index){
+  this.i=index;
   return `
     <img src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://${my_links[i]}&size=32">
     </img>
@@ -133,31 +134,30 @@ function favicons_and_links_lister(){
 }
 
 //__________________________________________
-  
-  function add_links_function(){
-    console.clear();
-    var add_it = IDx('theLink').value;
-    if(add_it === ''){//if nothing typed
-      alert('Input Empty');
-      if(my_links.length){
-        links_listed();//run function after building
-      }else{
-        empty_add_links();
-      }
-    };
-    favicons_and_links_lister();
-    
-    if(my_links != add_it && add_it) {//if it doesn't equal the value, and the value exists
-      if(!my_links){//if my_links doesn't exist
-      my_links.push(add_it);//add to end or bottom of array list
-      }else{
-        my_links.unshift(add_it); //add to top of array list
-      }
-      links_listed();
-      favicons_and_links_lister();
-      IDx('theLink').value = '';
+
+function add_links_function(){
+  console.clear();
+  var add_it = IDx('theLink').value;
+  if(add_it === ''){//if nothing typed
+    alert('Input Empty');
+    if(my_links.length){
+      links_listed();//run function after building
+    }else{
+      empty_add_links();
     }
+  };
+  favicons_and_links_lister();
+  if(my_links != add_it && add_it){//if it doesn't equal the value, and the value exists
+    if(!my_links){//if my_links doesn't exist
+      my_links.push(add_it);//add to end or bottom of array list
+    }else{
+      my_links.unshift(add_it); //add to top of array list
+    }
+    links_listed();
+    favicons_and_links_lister();
+    IDx('theLink').value = '';
   }
+}
 
 //__________________________________________
 
