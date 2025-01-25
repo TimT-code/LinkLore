@@ -127,10 +127,12 @@ function favicons_and_links_lister(){
     const theImg = document.getElementById('link_' + [i] + 'id');
     const theImg_w = parseInt(theImg.width);
     const theImg_h = parseInt(theImg.height);
+    /*
     if(theImg_w < 32){
       theImg.width='32px';
       theImg.height='32px':
     };
+    */
     IDx('theLink').value = '';
   }
   plural_checker_func();//bring in plural_check variable
