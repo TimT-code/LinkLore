@@ -124,17 +124,15 @@ function favicons_and_links_template(index){
 function favicons_and_links_lister(){
   for (var i = 0; i < my_links.length; i++){
     IDx("links_area").innerHTML += favicons_and_links_template(i);
-    /*
     const theImg = document.getElementById('link_' + i + '_id');
     const theImg_w = parseInt(theImg.width);
     const theImg_h = parseInt(theImg.height);
-    */
     /*if(theImg_w < 32){
       theImg.width='32px';
       theImg.height='32px':
     };*/
     IDx('theLink').value = '';
-    alert('link_id');
+    alert(theImg_w);
   }
   plural_checker_func();//bring in plural_check variable
   var stringz = JSON.stringify(my_links);
