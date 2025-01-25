@@ -111,8 +111,8 @@ function favicons_and_links_template(index){
   this.i=index;
   const theImg = new Image();
   img.onload = function(){
-    theImg_w = this.width;
-    theImg_h = this.height;
+    theImg_w = this.naturalWidth;
+    theImg_h = this.naturalHeight;
     if(theImg_w < 32){
       this.style.width='32px';
       this.style.height='32px':
