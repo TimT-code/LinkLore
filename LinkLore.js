@@ -132,7 +132,7 @@ function favicons_and_links_lister(){
       theImg.height='32px':
     };*/
     IDx('theLink').value = '';
-    alert(theImg_w);
+    alert(theImg);
   }
   plural_checker_func();//bring in plural_check variable
   var stringz = JSON.stringify(my_links);
