@@ -134,7 +134,7 @@ function favicons_and_links_lister(){
       theImg.height='32px':
     };*/
     IDx('theLink').value = '';
-    alert('Link_' + I + 'id');
+    alert('link_' + i + '_id');
   }
   plural_checker_func();//bring in plural_check variable
   var stringz = JSON.stringify(my_links);
