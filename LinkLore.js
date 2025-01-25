@@ -118,7 +118,7 @@ function favicons_and_links_template(index){
       this.style.height='32px':
     };
   };
-  theImg.src='https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://${my_links[i]}&size=32';
+  theImg.src=`https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://${my_links[i]}&size=32`;
   const imgSrc=theImg.src;
   return `
     <img src="${imgSrc}">
