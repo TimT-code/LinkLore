@@ -124,7 +124,7 @@ function favicons_and_links_template(index){
 function favicons_and_links_lister(){
   for (var i = 0; i < my_links.length; i++){
     IDx("links_area").innerHTML += favicons_and_links_template(i);
-    const theImg = document.getElementById('link_' + i + '_id');
+    const theImg = document.getElementById('link_' + i + '_id').width;
     const theImg_w = parseInt(theImg.width);
     const theImg_h = parseInt(theImg.height);
     /*if(theImg_w < 32){
