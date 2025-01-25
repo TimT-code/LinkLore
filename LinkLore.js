@@ -109,19 +109,8 @@ function links_listed(){
 
 function favicons_and_links_template(index){
   this.i=index;
-  const theImg = new Image();
-  theImg.onload = function(){
-    theImg_w = theImg.naturalWidth;
-    theImg_h = theImg.naturalHeight;
-    if(theImg_w < 32){
-      this.style.width='32px';
-      this.style.height='32px':
-    };
-  };
-  theImg.src=`https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://${my_links[i]}&size=32`;
-  const imgSrc=theImg.src;
   return `
-    <img src="${imgSrc}">
+    <img id="link_${i}_id" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://${my_links[i]}&size=32">
     </img>
     <a class="links_class" target="_blank" href="https://${my_links[i]}">
       ${my_links[i]}
@@ -135,6 +124,13 @@ function favicons_and_links_template(index){
 function favicons_and_links_lister(){
   for (var i = 0; i < my_links.length; i++) {
     IDx("links_area").innerHTML += favicons_and_links_template(i);
+    const theImg = document.getElementById('link_' + [i] + 'id');
+    const theImg_w = parseInt(theImg.width);
+    const theImg_h = parseInt(theImg.height);
+    if(theImg_w < 32){
+      theImg.width='32px';
+      theImg.height='32px':
+    };
     IDx('theLink').value = '';
   }
   plural_checker_func();//bring in plural_check variable
