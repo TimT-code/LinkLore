@@ -122,7 +122,7 @@ function favicons_and_links_template(index){
 //__________________________________________
 
 function favicons_and_links_lister(){
-  for (var i = 0; i < my_links.length; i++) {
+  for (var i = 0; i < my_links.length; i++){
     IDx("links_area").innerHTML += favicons_and_links_template(i);
     /*
     const theImg = document.getElementById('link_' + i + '_id');
@@ -134,7 +134,7 @@ function favicons_and_links_lister(){
       theImg.height='32px':
     };*/
     IDx('theLink').value = '';
-    alert('link_' + i + '_id');
+    alert('link_id');
   }
   plural_checker_func();//bring in plural_check variable
   var stringz = JSON.stringify(my_links);
