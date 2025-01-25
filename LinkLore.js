@@ -1,4 +1,4 @@
-let clr_bar = (()=>{
+(let clr_bar = (()=>{
   let changer_interval=setInterval(
     ()=>{
       let metaTag = document.getElementById('meta_id');
