@@ -110,9 +110,9 @@ function links_listed(){
 function favicons_and_links_template(index){
   this.i=index;
   const theImg = new Image();
-  img.onload = function(){
-    theImg_w = this.naturalWidth;
-    theImg_h = this.naturalHeight;
+  theImg.onload = function(){
+    theImg_w = theImg.naturalWidth;
+    theImg_h = theImg.naturalHeight;
     if(theImg_w < 32){
       this.style.width='32px';
       this.style.height='32px':
