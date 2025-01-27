@@ -110,7 +110,7 @@ function links_listed(){
 function favicons_and_links_template(index){
   this.i=index;
   return `
-    <img id="link_${i}_id" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://${my_links[i]}&size=32">
+    <img id="link_${i}_id" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://${my_links[i]}&size=32" width="32" height="32">
     </img>
     <a class="links_class" target="_blank" href="https://${my_links[i]}">
       ${my_links[i]}
@@ -125,10 +125,10 @@ function favicons_and_links_lister(){
   for (var i = 0; i < my_links.length; i++){
     IDx("links_area").innerHTML += favicons_and_links_template(i);
     const theImg = document.getElementById('link_' + i + '_id');
-    const theImg_w = theImg.width;
+    /*const theImg_w = theImg.width;
     const theImg_h = theImg.height;
       theImg.width='64';
-      theImg.height='64':
+      theImg.height='64':*/
     IDx('theLink').value = '';
     alert(theImg.width);
   }
