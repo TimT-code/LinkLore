@@ -34,9 +34,11 @@ iframe#response_iframe_id{width:488px;height:300px;display:none;background-color
   background-color:white;
   vertical-align:middle;
 }
+
 #favicon_links_id{
-  width:100px;
-  height:100px;
+  margin:0 0 0 20px;
+  width:auto;
+  height:auto;
   border:2px solid red;
 }
 
