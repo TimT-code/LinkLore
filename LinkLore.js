@@ -111,7 +111,7 @@ function favicons_and_links_template(index){
   this.i=index;
   return `
     <span id="favicon_links_id">
-      <img id="link_${i}_id" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://${my_links[i]}&size=32" width="32" height="32">
+      <img class="favicons_class" id="link_${i}_id" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://${my_links[i]}&size=32" width="32" height="32">
       </img>
       <a class="links_class" target="_blank" href="https://${my_links[i]}">
         ${my_links[i]}
