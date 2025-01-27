@@ -30,6 +30,10 @@ iframe#response_iframe_id{width:488px;height:300px;display:none;background-color
 #response_img_id{border:0;display:none;margin:0 0 0 50px}
 #load_file_input_id{margin:0 0 20px 50px;background-color:red;color:white}
 
+.favicons_class{
+  background-color:white;
+  vertical-align:middle;
+}
 #favicon_links_id{
   width:100px;
   height:100px;
@@ -54,7 +58,6 @@ iframe#response_iframe_id{width:488px;height:300px;display:none;background-color
   margin:4px;
   padding:5px 3px;
   vertical-align:middle;
-  
 }
 
 a:link{
