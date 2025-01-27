@@ -127,10 +127,10 @@ function favicons_and_links_lister(){
     const theImg = document.getElementById('link_' + i + '_id');
     const theImg_w = theImg.width;
     const theImg_h = theImg.height;
-    if(theImg_w < 32){
-      theImg.width='64';
-      theImg.height='64':
-    };
+    /*if(theImg_w < 32){
+      theImg.width='64px';
+      theImg.height='64px':
+    };*/
     IDx('theLink').value = '';
     alert(theImg.width);
   }
