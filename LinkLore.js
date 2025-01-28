@@ -127,7 +127,8 @@ function favicons_and_links_template(index){
 
 function favicons_and_links_lister(){
   IDx('theLink').value = '';//clear before loop
-  for (var i = 0; len = my_links.length; i < len; i++){
+  const len = my_links.length;
+  for (var i = 0; i < len; i++){
     IDx("links_area").innerHTML += favicons_and_links_template(i);
     //const theImg = document.getElementById('link_' + i + '_id');
     //alert(theImg.width);//testing
