@@ -41,11 +41,13 @@ button#test_button_id{display:inline;margin:0 0 0 10px;border:4px solid gray}
   width:auto;
   height:100%;
   border:solid 20px;
+  /*
   -webkit-transform:rotate(90deg);
   -moz-transform:rotate(90deg);
   -o-transform:rotate(90deg);
   -ms-transform:rotate(90deg);
   transform:rotate(90deg);
+  */
 }
 
 #links_area{
@@ -57,11 +59,13 @@ button#test_button_id{display:inline;margin:0 0 0 10px;border:4px solid gray}
   padding:10px;
   width:auto;
   height:auto;
+  /*
   -webkit-transform:rotate(270deg);
   -moz-transform:rotate(270deg);
   -o-transform:rotate(270deg);
   -ms-transform:rotate(270deg);
   transform:rotate(270deg);
+  */
 }
 iframe#response_iframe_id{width:488px;height:300px;display:none;background-color:black;border:7px solid black;margin:0 0 0 50px}
 .response_iframe_class{margin-left:50px}
