@@ -36,11 +36,16 @@ button#test_button_id{display:inline;margin:0 0 0 10px;border:4px solid gray}
   z-index:0;
   margin:0 10px;
   padding:0 0 80px 10px;
-  background-image:url('https://timt-code.github.io/LinkLore/images/image_fx_%20-%202025-01-16T124145.257.jpg');
+  background-image:url('https://timt-code.github.io/LinkLore/images/image_fx_%20-%202025-01-16T120829.876.jpg ');
   background-color:#C0ACB1;
   width:auto;
   height:100%;
   border:solid 20px;
+  -webkit-transform:rotate(90deg);
+  -moz-transform:rotate(90deg);
+  -o-transform:rotate(90deg);
+  -ms-transform:rotate(90deg);
+  transform:rotate(90deg);
 }
 
 #links_area{
