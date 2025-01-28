@@ -53,7 +53,7 @@ vid[10]={vid_info:'B53Vlje7mcM?start=00&end=04', dvt:0, evt:3970};//war games - 
 vid[11]={vid_info:'mtTi5yG0Qnw?start=00&end=06', dvt:0, evt:5970};//robot sounds
 
 var media_url = [];
-media_url[0] = 'https://timt-code.github.io/LinkLore/images/actions/7rj2ZgttvgomY.gif';//clapping
+media_url[0] = 'https://timt-code.github.io/LinkLore/images/actions/7rj2ZgttvgomY.webp';//clapping
 media_url[1] = 'https://timt-code.github.io/LinkLore/images/actions/tumblr_msjr0z1PmG1sgl0ajo1_500.gif';
 
 //__________________________________________
