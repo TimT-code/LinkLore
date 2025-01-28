@@ -126,10 +126,10 @@ function favicons_and_links_template(index){
 //__________________________________________
 
 function favicons_and_links_lister(){
+  IDx('theLink').value = '';//clear before loop
   for (var i = 0; len = my_links.length; i < len; i++){
     IDx("links_area").innerHTML += favicons_and_links_template(i);
     //const theImg = document.getElementById('link_' + i + '_id');
-    IDx('theLink').value = '';
     //alert(theImg.width);//testing
   }
   plural_checker_func();//bring in plural_check variable
