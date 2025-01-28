@@ -12,10 +12,12 @@ let clr_bar=(()=>{
 
 var code_stamp = function(){
   console.clear();
-  console.log('Code Author - Tim Tesner');
-  console.log('https://codepen.io/TimT_code');
-  console.log('my_links[]');
-  console.log('Add Links to List');
+  console.log(`
+    Code Author - Tim Tesner
+    https://codepen.io/TimT_code
+    my_links[]
+    Add Links to List
+  `);
   myForm.focus();
 };
 code_stamp();
