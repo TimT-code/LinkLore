@@ -71,7 +71,7 @@ function plural_checker_func(){
   if (my_links.length === 1){//if equal to 1 - then 0 and 2 are "links"
     plural_check = 'Link';//1
   }else{
-    plural_check = 'Links'; //0 or 2
+    plural_check = 'Links'; //0, 2 or more
   }
 }
 //plural_checker_func();
@@ -126,7 +126,7 @@ function favicons_and_links_template(index){
 //__________________________________________
 
 function favicons_and_links_lister(){
-  for (var i = 0; i < my_links.length; i++){
+  for (var i = 0; len = my_links.length; i < len; i++){
     IDx("links_area").innerHTML += favicons_and_links_template(i);
     //const theImg = document.getElementById('link_' + i + '_id');
     IDx('theLink').value = '';
